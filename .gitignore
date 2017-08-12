@@ -1,4 +1,5 @@
 .idea/
 result/*
 data/
+info/picList/
 cmake-build-debug/

@@ -1,0 +1,6 @@
+wd_all_1
+./create ./data/wd_all_1_info.txt ./data/wd_all_1_res.txt ./data/wd_all_1_title.txt 
+True Done CreateScript
+NumFile:  29814
+./test ./data/wd_all_1_info.txt ./result/wd_all_1_res.data ./result/wd_all_1_title.data 0 29814 0 0
+read: 0.056491 s

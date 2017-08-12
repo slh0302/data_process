@@ -7,13 +7,16 @@ co = 524774
 NumFile = 0
 File_Handle = 100
 startPic = 0
-FileNamePlus = 2000000
-FileResultPrefix = "/media/result/"
+FileNamePlus = 0
+FileResultPrefix = "/media/vehicle_res/"
 FileDataPrefix = "/media/data/"
-exec_file = ["20160514", "20160515", "20160516", "20160517"
-    , "20160518", "20160519", "20160520", "20160521"
-    , "20160522", "20160524", "20160525"]
-
+# exec_file = ["20160514", "20160515", "20160516", "20160517"
+#     , "20160518", "20160519", "20160520", "20160521"
+#     , "20160522", "20160524", "20160525"]
+# exec_file = ["wd_all_2_new_0" , "wd_all_2_new_1", "wd_all_2_new_2"]
+exec_file = ["wd_all_2_new_0"]
+# ["wd_all_3_new_0", "wd_all_3_new_1", "wd_all_3_new_2", "wd_all_3_new_3", "wd_all_3_new_4" ,
+# "wd_all_3_new_5", "wd_all_3_new_6", "wd_all_3_new_7"]
 for handle in exec_file:
     begin_time = time.clock()
     print handle
@@ -24,10 +27,10 @@ for handle in exec_file:
 
     if not os.path.isfile("./data/" + handle + "_title.txt"):
         exit()
-    elif not os.path.isfile("./result/" + handle + "_title.data"):
-        ChangeScript = "sed -i 's/F:/\/media\/data/g' ./data/" + handle + "_title.txt"
-        resp = Popen(ChangeScript, shell=True, stdout=PIPE, stderr=PIPE).stdout.readlines()
-        print "Done ChangeScript"
+    # elif not os.path.isfile("./result/" + handle + "_title.data"):
+    #     ChangeScript = "sed -i 's/F:/\/media\/data/g' ./data/" + handle + "_title.txt"
+    #     resp = Popen(ChangeScript, shell=True, stdout=PIPE, stderr=PIPE).stdout.readlines()
+    #     print "Done ChangeScript"
 
     if not os.path.isfile("./result/" + handle + "_title.data"):
         CreateScript = "./create " + "./data/" + handle + "_info.txt " + "./data/" + \
@@ -53,7 +56,8 @@ for handle in exec_file:
     resp = Popen(handle_script, shell=True, stdout=PIPE, stderr=PIPE).stdout.readlines()
     end_time = time.clock()
     print "read: %f s" % (end_time - begin_time)
-    FileNamePlus += 2000000
+    # FileNamePlus += 2000000
+    FileNamePlus += 1000000
 # print begin
 # end = NumFile
 # handle_script = "opencv_test.exe " + str(co) + " 993021 " + str(begin) + " " + str(end) + " " + str(startPic)

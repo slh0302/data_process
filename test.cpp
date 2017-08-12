@@ -21,7 +21,7 @@ struct pic {
 	int name;
 };
 struct file_info {
-	char FilePath[50];
+	char FilePath[200];
 	int numOfObject;
 	int height;
 	int width;
@@ -152,7 +152,7 @@ void thread_crop(pic* tempPic, file_info* tempFile, int num)
 			std::stringstream ss1;
 			ss1 << tempPic[totalProcess + i].name + FileNamePlus;
 			std::string outname1 = file_name + "_" + ss1.str() + "_" + ss.str() + ".jpg";
-			cvSaveImage(std::string("/media/result/" + file_prefix + "/" + outname1).c_str(), &qImg);
+			cvSaveImage(std::string("/media/vehicle_res/" + file_prefix + "/" + outname1).c_str(), &qImg);
 		}
 		cvReleaseImage(&p);
 		delete[] temp;

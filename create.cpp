@@ -10,7 +10,7 @@ struct pic {
 	int name;
 };
 struct file_info {
-	char FilePath[50];
+	char FilePath[200];
 	int numOfObject;
 	int height;
 	int width;
@@ -43,6 +43,7 @@ int main(int args, char** argv) {
 	int pic_num = 0, totalProcess = 0, height = 0, width = 0;
 	while (k < FileNum) {
 		inTitle >> fileName >> pic_num >> width >> height;
+		std:cout<<fileName<<pic_num<<width<<height<<std::endl;
 		int j = 0;
 		for (; j < fileName.length(); j++) {
 			totalFile[k].FilePath[j] = fileName[j];
